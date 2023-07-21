@@ -1,0 +1,11 @@
+﻿################################################################################
+# Este arquivo .gitignore foi criado automaticamente pelo Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/desafio-dev/v17
+/desafiodev.cnabreader/.vs/desafiodev.cnabreader.domain/DesignTimeBuild
+/desafiodev.cnabreader/.vs/desafiodev.cnabreader.domain/FileContentIndex
+/desafiodev.cnabreader/.vs/ProjectEvaluation
+/desafiodev.cnabreader/desafiodev.cnabreader.domain/obj
+/.vs
+/desafiodev.cnabreader/.vs
