@@ -9,3 +9,11 @@
 /desafiodev.cnabreader/desafiodev.cnabreader.domain/obj
 /.vs
 /desafiodev.cnabreader/.vs
+/desafiodev.cnabreader/desafiodev.cnabreader.api/bin/Debug/net6.0
+/desafiodev.cnabreader/desafiodev.cnabreader.api/obj
+/desafiodev.cnabreader/desafiodev.cnabreader.application/bin/Debug/net6.0
+/desafiodev.cnabreader/desafiodev.cnabreader.application/obj
+/desafiodev.cnabreader/desafiodev.infra.crosscutting.DI/bin/Debug/net6.0
+/desafiodev.cnabreader/desafiodev.infra.crosscutting.DI/obj
+/desafiodev.cnabreader/desafiodev.infra.crosscutting.Extensions/bin/Debug/net6.0
+/desafiodev.cnabreader/desafiodev.infra.crosscutting.Extensions/obj

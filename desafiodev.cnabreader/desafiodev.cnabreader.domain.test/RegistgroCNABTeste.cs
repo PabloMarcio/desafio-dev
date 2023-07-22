@@ -44,5 +44,16 @@ namespace desafiodev.cnabreader.domain.test
         {
             Assert.Throws<CnabParserException>(() => { var cnab = RegistroCNAB.NewFromParse(linhaCnab); });
         }
+
+        [Theory]
+        [InlineData("3201903010000014200096206760174753****3153153453JOÃO MACEDO   BAR DO JOÃO       ")]
+        [InlineData("5201903010000013200556418150633123****7687145607MARIA JOSEFINALOJA DO Ó - MATRIZ")]
+        [InlineData("3201903010000012200845152540736777****1313172712MARCOS PEREIRAMERCADO DA AVENIDA")]
+        public void Deve_Gerar_Dois_Registros_CNAB_Iguais_E_Verificar_Duplicidade(string linhaCnab)
+        {
+            var cnab1 = RegistroCNAB.NewFromParse(linhaCnab);
+            var cnab2 = RegistroCNAB.NewFromParse(linhaCnab);
+            Assert.True(cnab1.Match(cnab2));
+        }
     }
 }

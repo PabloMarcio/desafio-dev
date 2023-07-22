@@ -108,5 +108,34 @@ namespace desafiodev.cnabreader.domain
             var loja = NomeLoja.PadRight(18, ' '); // o arquivo enviado no github contém apenas 18 de tamanho para este campo, embora a documentação especifique 19
             return $"{tipo}{data}{valor}{cpf}{cartao}{hora}{dono}{loja}";
         }
+
+        public bool Match(RegistroCNAB cnab)
+        {
+            if (TipoTransacao != cnab.TipoTransacao) return false;
+            if (DataHora != cnab.DataHora) return false;
+            if (Valor != cnab.Valor) return false;
+            if (CpfBeneficiario != cnab.CpfBeneficiario) return false;
+            if (CartaoUtilizado != cnab.CartaoUtilizado) return false;
+            if (ProprietarioLoja != cnab.ProprietarioLoja) return false;
+            if (NomeLoja != cnab.NomeLoja) return false;    
+            return true;
+        }
+
+        public static bool IsTipoEntrada(TipoTransacao tipo)
+        {
+            return tipo == TipoTransacao.Debito || 
+               tipo == TipoTransacao.Credito ||
+               tipo == TipoTransacao.RecebimentoEmprestimo ||
+               tipo == TipoTransacao.Vendas ||
+               tipo == TipoTransacao.RecebimentoTed ||
+               tipo == TipoTransacao.RecebimentoDoc;
+        }
+
+        public static bool IsTipoSaida(TipoTransacao tipo) 
+        {
+            return tipo == TipoTransacao.Boleto ||
+               tipo == TipoTransacao.Financiamento ||
+               tipo == TipoTransacao.Aluguel;
+        }
     }
 }
